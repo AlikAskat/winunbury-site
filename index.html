@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinUnbury — Small Windows Utilities</title>
+    <meta name="description" content="Small Windows utilities that fix annoying things.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a class="logo" href="/">WinUnbury</a>
+
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <button id="languageButton">RU</button>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container">
+
+        <div class="eyebrow">WINDOWS UTILITIES</div>
+
+        <h1>Small Windows utilities that fix annoying things.</h1>
+
+        <p>
+            We don't replace Windows.
+            We uncover the useful parts that Windows makes unnecessarily difficult to reach.
+        </p>
+
+        <a class="button" href="#products">See utilities</a>
+
+    </div>
+</section>
+
+
+<section id="products" class="products">
+    <div class="container">
+
+        <div class="section-label">CURRENT PRODUCTS</div>
+
+        <div class="product-card">
+
+            <div class="product-icon">B</div>
+
+            <div>
+                <h2>BluetoothSwitch</h2>
+
+                <p>
+                    A tiny Windows 11 tray utility for quickly
+                    turning Bluetooth on and off.
+                </p>
+
+                <div class="product-links">
+                    <a href="/bluetoothswitch/">Product page →</a>
+
+                    <a href="https://github.com/AlikAskat/BluetoothSwitch"
+                       target="_blank"
+                       rel="noopener">
+                        GitHub →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section id="about" class="about">
+    <div class="container">
+
+        <div class="section-label">THE IDEA</div>
+
+        <h2>Useful things shouldn't be buried.</h2>
+
+        <p>
+            Windows has many useful capabilities hidden behind settings,
+            menus and workarounds. WinUnbury creates small tools that make
+            one specific annoying task simple.
+        </p>
+
+    </div>
+</section>
+
+</main>
+
+
+<footer>
+    <div class="container footer-inner">
+        <span>© 2026 WinUnbury</span>
+
+        <a href="https://github.com/AlikAskat"
+           target="_blank"
+           rel="noopener">
+            GitHub
+        </a>
+    </div>
+</footer>
+
+
+<script>
+const button = document.getElementById("languageButton");
+
+button.addEventListener("click", () => {
+    if (document.documentElement.lang === "en") {
+        document.documentElement.lang = "ru";
+        button.textContent = "EN";
+
+        document.querySelector("h1").textContent =
+            "Маленькие утилиты Windows, которые исправляют раздражающие вещи.";
+
+        document.querySelector(".hero p").textContent =
+            "Мы не заменяем Windows. Мы достаём наружу полезные функции, до которых Windows заставляет слишком долго добираться.";
+
+        document.querySelector(".button").textContent =
+            "Посмотреть программы";
+    } else {
+        document.documentElement.lang = "en";
+        button.textContent = "RU";
+
+        document.querySelector("h1").textContent =
+            "Small Windows utilities that fix annoying things.";
+
+        document.querySelector(".hero p").textContent =
+            "We don't replace Windows. We uncover the useful parts that Windows makes unnecessarily difficult to reach.";
+
+        document.querySelector(".button").textContent =
+            "See utilities";
+    }
+});
+</script>
+
+</body>
+</html>
