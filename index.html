@@ -3,40 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>WinUnbury — Small Windows Utilities</title>
-    <meta name="description" content="Small Windows utilities that fix annoying things.">
+
+    <meta
+        name="description"
+        content="Small Windows utilities that fix annoying things."
+    >
+
+    <meta property="og:title" content="WinUnbury — Small Windows Utilities">
+    <meta
+        property="og:description"
+        content="Small Windows utilities that fix annoying things."
+    >
+    <meta property="og:type" content="website">
+
+    <link rel="canonical" href="https://winunbury.com/">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
     <div class="container header-inner">
+
         <a class="logo" href="/">WinUnbury</a>
 
         <nav>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <button id="languageButton">RU</button>
+            <a href="#products" data-en="Products" data-ru="Программы">Products</a>
+            <a href="#about" data-en="About" data-ru="О проекте">About</a>
+
+            <button id="languageButton" type="button">RU</button>
         </nav>
+
     </div>
 </header>
+
 
 <main>
 
 <section class="hero">
     <div class="container">
 
-        <div class="eyebrow">WINDOWS UTILITIES</div>
+        <div
+            class="eyebrow"
+            data-en="WINDOWS UTILITIES"
+            data-ru="УТИЛИТЫ WINDOWS"
+        >
+            WINDOWS UTILITIES
+        </div>
 
-        <h1>Small Windows utilities that fix annoying things.</h1>
+        <h1
+            data-en="Small Windows utilities that fix annoying things."
+            data-ru="Маленькие утилиты Windows, которые исправляют раздражающие вещи."
+        >
+            Small Windows utilities that fix annoying things.
+        </h1>
 
-        <p>
+        <p
+            data-en="We don't replace Windows. We uncover the useful parts that Windows makes unnecessarily difficult to reach."
+            data-ru="Мы не заменяем Windows. Мы достаём наружу полезные функции, до которых Windows заставляет слишком долго добираться."
+        >
             We don't replace Windows.
             We uncover the useful parts that Windows makes unnecessarily difficult to reach.
         </p>
 
-        <a class="button" href="#products">See utilities</a>
+        <a
+            class="button"
+            href="#products"
+            data-en="See utilities"
+            data-ru="Посмотреть программы"
+        >
+            See utilities
+        </a>
 
     </div>
 </section>
@@ -45,29 +84,50 @@
 <section id="products" class="products">
     <div class="container">
 
-        <div class="section-label">CURRENT PRODUCTS</div>
+        <div
+            class="section-label"
+            data-en="CURRENT PRODUCTS"
+            data-ru="ТЕКУЩИЕ ПРОГРАММЫ"
+        >
+            CURRENT PRODUCTS
+        </div>
 
         <div class="product-card">
 
             <div class="product-icon">B</div>
 
-            <div>
+            <div class="product-content">
+
                 <h2>BluetoothSwitch</h2>
 
-                <p>
+                <p
+                    data-en="A tiny Windows 11 tray utility for quickly turning Bluetooth on and off."
+                    data-ru="Маленькая утилита для Windows 11, которая позволяет быстро включать и выключать Bluetooth из системного трея."
+                >
                     A tiny Windows 11 tray utility for quickly
                     turning Bluetooth on and off.
                 </p>
 
                 <div class="product-links">
-                    <a href="/bluetoothswitch/">Product page →</a>
 
-                    <a href="https://github.com/AlikAskat/BluetoothSwitch"
-                       target="_blank"
-                       rel="noopener">
+                    <a
+                        href="/bluetoothswitch/"
+                        data-en="Product page →"
+                        data-ru="Страница программы →"
+                    >
+                        Product page →
+                    </a>
+
+                    <a
+                        href="https://github.com/AlikAskat/BluetoothSwitch"
+                        target="_blank"
+                        rel="noopener"
+                    >
                         GitHub →
                     </a>
+
                 </div>
+
             </div>
 
         </div>
@@ -79,11 +139,25 @@
 <section id="about" class="about">
     <div class="container">
 
-        <div class="section-label">THE IDEA</div>
+        <div
+            class="section-label"
+            data-en="THE IDEA"
+            data-ru="ИДЕЯ"
+        >
+            THE IDEA
+        </div>
 
-        <h2>Useful things shouldn't be buried.</h2>
+        <h2
+            data-en="Useful things shouldn't be buried."
+            data-ru="Полезные вещи не должны быть спрятаны."
+        >
+            Useful things shouldn't be buried.
+        </h2>
 
-        <p>
+        <p
+            data-en="Windows has many useful capabilities hidden behind settings, menus and workarounds. WinUnbury creates small tools that make one specific annoying task simple."
+            data-ru="В Windows много полезных возможностей спрятано за настройками, меню и обходными путями. WinUnbury создаёт небольшие инструменты, которые делают одну конкретную раздражающую задачу простой."
+        >
             Windows has many useful capabilities hidden behind settings,
             menus and workarounds. WinUnbury creates small tools that make
             one specific annoying task simple.
@@ -97,46 +171,56 @@
 
 <footer>
     <div class="container footer-inner">
-        <span>© 2026 WinUnbury</span>
 
-        <a href="https://github.com/AlikAskat"
-           target="_blank"
-           rel="noopener">
+        <span
+            data-en="© 2026 WinUnbury"
+            data-ru="© 2026 WinUnbury"
+        >
+            © 2026 WinUnbury
+        </span>
+
+        <a
+            href="https://github.com/AlikAskat"
+            target="_blank"
+            rel="noopener"
+        >
             GitHub
         </a>
+
     </div>
 </footer>
 
 
 <script>
-const button = document.getElementById("languageButton");
+const languageButton = document.getElementById("languageButton");
 
-button.addEventListener("click", () => {
-    if (document.documentElement.lang === "en") {
-        document.documentElement.lang = "ru";
-        button.textContent = "EN";
+function setLanguage(language) {
+    document.documentElement.lang = language;
 
-        document.querySelector("h1").textContent =
-            "Маленькие утилиты Windows, которые исправляют раздражающие вещи.";
+    document.querySelectorAll("[data-en][data-ru]").forEach(element => {
+        element.textContent = element.dataset[language];
+    });
 
-        document.querySelector(".hero p").textContent =
-            "Мы не заменяем Windows. Мы достаём наружу полезные функции, до которых Windows заставляет слишком долго добираться.";
+    languageButton.textContent = language === "en" ? "RU" : "EN";
 
-        document.querySelector(".button").textContent =
-            "Посмотреть программы";
-    } else {
-        document.documentElement.lang = "en";
-        button.textContent = "RU";
+    document.title = language === "en"
+        ? "WinUnbury — Small Windows Utilities"
+        : "WinUnbury — Небольшие утилиты Windows";
 
-        document.querySelector("h1").textContent =
-            "Small Windows utilities that fix annoying things.";
+    const description = document.querySelector('meta[name="description"]');
 
-        document.querySelector(".hero p").textContent =
-            "We don't replace Windows. We uncover the useful parts that Windows makes unnecessarily difficult to reach.";
+    description.setAttribute(
+        "content",
+        language === "en"
+            ? "Small Windows utilities that fix annoying things."
+            : "Небольшие утилиты Windows, которые исправляют раздражающие вещи."
+    );
+}
 
-        document.querySelector(".button").textContent =
-            "See utilities";
-    }
+languageButton.addEventListener("click", () => {
+    const currentLanguage = document.documentElement.lang;
+
+    setLanguage(currentLanguage === "en" ? "ru" : "en");
 });
 </script>
 
