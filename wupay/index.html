@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111118">
+  <title>WU Pay — WinUnbury</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 24px;
+      display: grid; place-items: center;
+      background: #111118; color: #f4f2ff;
+      font: 16px/1.6 system-ui, sans-serif;
+    }
+    main {
+      width: min(100%, 480px); padding: 32px;
+      border: 1px solid #343142; border-radius: 20px;
+      background: #191821; text-align: center;
+    }
+    .brand { color: #a99aff; font-weight: 700; letter-spacing: .08em; }
+    h1 { margin: 12px 0; font-size: 2rem; }
+    p { color: #c5c1d3; }
+    #connect { display: flex; justify-content: center; margin: 28px 0 16px; }
+    #status { min-height: 48px; font-size: 14px; overflow-wrap: anywhere; }
+    .note { font-size: 13px; color: #9e99ad; }
+    a { color: #b6a8ff; }
+  </style>
+  <script src="https://unpkg.com/@tonconnect/ui@2.3.2/dist/tonconnect-ui.min.js"></script>
+</head>
+<body>
+  <main>
+    <div class="brand">WINUNBURY</div>
+    <h1>WU Pay</h1>
+    <p>Simple payments. Direct to the recipient.</p>
+    <div id="connect"></div>
+    <p id="status" role="status">Loading wallet connection…</p>
+    <p class="note">Prototype only. Connecting a wallet does not send funds.
+      Never share your recovery phrase or private keys.</p>
+    <p><a href="/">Back to WinUnbury</a></p>
+  </main>
+  <script>
+    const status = document.getElementById('status');
+
+    if (!window.TON_CONNECT_UI) {
+      status.textContent = 'Wallet library did not load. Check your internet connection.';
+    } else {
+      try {
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+          manifestUrl: 'https://winunbury-site.pages.dev/wupay/tonconnect-manifest.json',
+          buttonRootId: 'connect'
+        });
+
+        tonConnectUI.onStatusChange(wallet => {
+          if (wallet) {
+            const address = wallet.account.address;
+            status.textContent = 'Wallet connected: ' +
+              address.slice(0, 8) + '…' + address.slice(-8);
+          } else {
+            status.textContent = 'Wallet not connected.';
+          }
+        });
+      } catch (error) {
+        status.textContent = 'Could not initialize wallet connection.';
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>
